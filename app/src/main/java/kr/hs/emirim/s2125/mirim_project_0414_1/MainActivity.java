@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         imgv=findViewById(R.id.imgv);
         rg.setOnCheckedChangeListener(rgListener);
         checkStart.setOnCheckedChangeListener(checkListener);
+        Button bntFinish = findViewById(R.id.btn_finsh);
+        bntFinish.setOnClickListener(btnListener);
     }
 
     CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
@@ -53,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                     imgv.setImageResource(R.drawable.rabbit);
                     break;
             }
+        }
+    };
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            finish();
         }
     };
 }
