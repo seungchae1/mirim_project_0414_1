@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         checkStart.setOnCheckedChangeListener(checkListener);
         Button bntFinish = findViewById(R.id.btn_finsh);
         bntFinish.setOnClickListener(btnListener);
+        Button btnFirst = findViewById(R.id.btn_first);
+        btnFirst.setOnClickListener(btnListener);
     }
 
     CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
@@ -60,7 +62,15 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            finish();
+            switch (view.getId()){
+                case R.id.btn_finsh:
+                    finish();
+                    break;
+                case R.id.btn_first:
+                    linear_sub.setVisibility(View.INVISIBLE);
+                    checkStart.setChecked(false);
+                    break;
+            }
         }
     };
 }
